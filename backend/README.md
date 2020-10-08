@@ -9,10 +9,15 @@
 ###### Windows CMD
 
 `$ .venv\Scripts\activate`
+`$  deactivate`
+
 
 ###### Ubuntu
 
-`$ source nombre_entorno/bin/activate`
+`$ source .venv/bin/activate`
+
+`$ deactivate`
+
 
 ### Instalar dependencias de pip3
 
