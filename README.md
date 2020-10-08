@@ -1,1 +1,1 @@
-# SENASoft_template
+# Competencia SENASoft Grupo 6
