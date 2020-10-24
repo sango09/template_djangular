@@ -30,9 +30,6 @@ SECRET_KEY = env('DJANGO_SECRET_KEY', default='PB3aGvTmCkzaLGRAxDc3aMayKTPTDd5us
 DEBUG = env.bool('DJANGO_DEBUG', True)
 
 ALLOWED_HOSTS = [
-    "localhost",
-    "0.0.0.0",
-    "127.0.0.1",
 ]
 
 # Application definition
@@ -50,6 +47,7 @@ THIRD_PARTY_APPS = [
     'rest_framework.authtoken',
     'django_filters',
     'django_cleanup',
+    'corsheaders',
 ]
 
 LOCAL_APPS = [
@@ -69,6 +67,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'config.urls'
+
+# Users & Authentication
+AUTH_USER_MODEL = 'users.User'
 
 # Templates
 TEMPLATES = [
@@ -97,6 +98,8 @@ TEMPLATES = [
     },
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True
+
 WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
@@ -109,12 +112,12 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'sena_soft',
-        'USER': 'postgres',
-        'PASSWORD': '0810',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': '',
+        'USER': 'root',
+        'PASSWORD': '',
         'HOST': 'localhost',
-        'POST': '5432'
+        'POST': '3306'
     }
 }
 
@@ -174,3 +177,11 @@ STATICFILES_FINDERS = [
 # Media
 MEDIA_ROOT = str(APPS_DIR('media'))
 MEDIA_URL = '/media/'
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
