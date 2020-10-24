@@ -21,6 +21,7 @@ django-oauth-toolkit >= 1.3.2
 
 # JWT
 pyjwt >= 1.7.1
+djangorestframework-simplejwt >= 4.4.0
 
 # Password security
 argon2-cffi == 18.3.0
@@ -28,4 +29,6 @@ argon2-cffi == 18.3.0
 # Static files
 whitenoise == 4.1.2
 
+# Conection frontend
+django-cors-headers == 3.5.0
 
